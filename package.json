@@ -1,12 +1,16 @@
 {
   "name": "duck",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "scripts": {
-    "start": "ts-node src "
+    "start": "ts-node src",
+    "build": "tsc"
   },
   "dependencies": {
     "discord.js": "^12.5.3",
-    "dokdo": "^0.4.0"
+    "dokdo": "^0.4.0",
+    "ts-node": "^10.1.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
     "@types/node": "^16.3.3"

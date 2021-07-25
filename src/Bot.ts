@@ -1,8 +1,7 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import { Client, Collection } from 'discord.js';
 import Dokdo from 'dokdo';
 import { readdirSync } from 'fs';
+import login from './Login';
 
 const prefix: string = "!"; // 여기 있는 prefix 변경
 const client = new Client();
@@ -27,32 +26,28 @@ async function ownerDmSend() {
     await owners.send('Bot ready');
 };
 
-function botLogin() {
-    client.login(process.env.TOKEN).then();
-}
 
-function botReady() {
+function bot() {
+    login();
+    
     client.on('ready', () => {
         console.log(`Login ${client.user!.username}`);
         botSetActivity();
         ownerDmSend();
     });
-};
-
-let client_commands: any = new Collection();
-
-let client_commands_load = (dir: any) => {
-    for (const file of readdirSync(dir)) {
-        const cmd = require(`./commands/${file}`);
-        client_commands.set(cmd.name, cmd);
+    
+    let client_commands: any = new Collection();
+    
+    let client_commands_load = (dir: any) => {
+        for (const file of readdirSync(dir)) {
+            const cmd = require(`./commands/${file}`);
+            client_commands.set(cmd.name, cmd);
+        }
+        console.log(client_commands.map((c: { name: any; }) => c.name).join(', ') + ' Load Success');
     }
-    console.log(client_commands.map((c: { name: any; }) => c.name).join(', ') + ' Load Success');
-}
+    
+    client_commands_load(__dirname + "/commands");
 
-client_commands_load(__dirname + "/commands");
-
-
-async function botCommands() {
     client.on('message', msg => {
         if (msg.author.bot) return;
         DokdoHandler.run(msg);
@@ -68,11 +63,19 @@ async function botCommands() {
     
         if (cmd) cmd.run(client, msg, args);
     });
-
 }
 
+// function botReady() {
+
+// };
+
+
+
+// async function botCommands() {
+
+// }
+
 export {
-    botReady,
-    botLogin,
-    botCommands
+    bot,
+    client
 };

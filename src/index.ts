@@ -1,9 +1,3 @@
-import {
-    botReady,
-    botLogin,
-    botCommands
-} from './Bot';
+import { bot } from "./Bot";
 
-botLogin();
-botReady();
-botCommands();
+bot();

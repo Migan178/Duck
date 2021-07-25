@@ -1,4 +1,6 @@
 import { MessageEmbed } from 'discord.js';
+import { prefix } from '../Bot/Bot';
+const DuckVer = require('../../package.json');
 
 module.exports = {
     name: "도움말",
@@ -6,7 +8,7 @@ module.exports = {
         const Embed = new MessageEmbed()
             .setColor(0x000000)
             .setTitle(`${client.user!.username}의 도움말`)
-            .setDescription("아직 하나 밖에 없다. 접두사: ``!``\n버젼: ``v0.0.4``")
+            .setDescription(`아직 하나 밖에 없다. 접두사: \`\`${prefix}\`\`\n버젼: \`\`${DuckVer.version}\`\``)
             .addFields(
                 {
                     name: "일반",

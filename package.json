@@ -2,8 +2,9 @@
   "name": "duck",
   "version": "0.0.5",
   "scripts": {
-    "start": "ts-node src",
-    "build": "tsc"
+    "start": "node dist",
+    "build": "tsc",
+    "test": "ts-node src"
   },
   "dependencies": {
     "discord.js": "^12.5.3",

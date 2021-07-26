@@ -1,11 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import { client } from '../Bot/Bot';
-const DuckVer = require('../../package.json');
-
-function botSetActivity() {
-    client.user!.setActivity(`!도움말을 쳐보아라. | version: ${DuckVer.version}`, { type: "PLAYING" });
-};
+import { botSetActivity } from '../config/config';
 
 function login() {
     client.login(process.env.TOKEN);

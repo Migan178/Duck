@@ -1,6 +1,6 @@
 {
   "name": "duck",
-  "version": "0.0.4.1",
+  "version": "0.0.5",
   "scripts": {
     "start": "ts-node src",
     "build": "tsc"
@@ -11,7 +11,8 @@
     "dotenv": "^10.0.0",
     "ts-node": "^10.1.0",
     "tsc": "^2.0.3",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "pretty-ms": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.3.3"

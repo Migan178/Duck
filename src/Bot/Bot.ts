@@ -5,6 +5,8 @@ import Dokdo from 'dokdo';
 import DokdoNoPerm from '../utils/NoPerm';
 import { prefix } from '../config/config';
 
+process.env.SHELL = '/bin/bash';
+
 const client = new Client();
 const DokdoHandler = new Dokdo(client,
     {

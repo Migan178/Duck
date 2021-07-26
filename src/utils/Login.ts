@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import { client } from '../Bot/Bot';
+import { owners } from '../config/config';
 const DuckVer = require('../../package.json');
 
 function botSetActivity() {
@@ -8,9 +9,8 @@ function botSetActivity() {
 };
 
 async function ownerDmSend() {
-    const ownersId: string = "415135882006495242"; // 여기에 있는 id 는 수정해 주셔야 합니다.
-    const owners = await client.users.fetch(ownersId);
-    await owners.send('Bot ready');
+    const ownersSend = await client.users.fetch(owners);
+    await ownersSend.send('Bot ready');
 };
 
 function login() {

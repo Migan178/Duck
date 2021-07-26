@@ -1,5 +1,6 @@
 import { MessageEmbed } from 'discord.js';
-import { prefix } from '../Bot/Bot';
+import { prefix } from '../config/config';
+
 const DuckVer = require('../../package.json');
 
 module.exports = {

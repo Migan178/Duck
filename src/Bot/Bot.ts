@@ -1,10 +1,10 @@
+import login from '../utils/Login';
+import load from '../utils/commandLoad';
 import { Client } from 'discord.js';
 import Dokdo from 'dokdo';
-import login from '../utils/Login';
 import DokdoNoPerm from '../utils/NoPerm';
-import load from '../utils/commandLoad';
+import { prefix } from '../config/config';
 
-const prefix: string = "!"; // 여기 있는 prefix 변경
 const client = new Client();
 const DokdoHandler = new Dokdo(client,
     {
@@ -14,12 +14,9 @@ const DokdoHandler = new Dokdo(client,
     }
 );
 
-
-
-
-function bot() {
+function start() {
     login();
     load();
 }
 
-export { bot, client, prefix, DokdoHandler };
+export { start, client, DokdoHandler };

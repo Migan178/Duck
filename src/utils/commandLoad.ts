@@ -1,6 +1,7 @@
 import { Collection } from 'discord.js';
 import { readdirSync } from 'fs';
-import { prefix, client, DokdoHandler } from '../Bot/Bot';
+import { prefix } from '../config/config';
+import { DokdoHandler, client } from '../Bot/Bot';
 
 function load() {
     let client_commands: any = new Collection();

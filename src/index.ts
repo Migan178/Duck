@@ -1,14 +1,20 @@
 import DuckClient from "./Client/DuckClient";
-import { prefix } from "./config/config";
+import config from "./config/config";
 
 const client = new DuckClient({
-  prefix,
+  prefix: config.prefix,
   intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"],
   token: process.env.TOKEN,
+  owners: config.owners,
 });
 
 client.on("messageCreate", (msg) => {
-  if (!msg.content.startsWith(client.prefix) || msg.author.bot) return;
+  if (
+    !msg.content.startsWith(client.prefix) ||
+    msg.author.bot ||
+    msg.channel.type === "DM"
+  )
+    return;
   client.dokdo.run(msg);
 
   const args: string[] = msg.content

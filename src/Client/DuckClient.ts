@@ -7,10 +7,12 @@ import Dokdo from "dokdo";
 class DuckClient extends Client {
   dokdo: any;
   prefix: string;
+  owners: any;
   constructor(options: any) {
     super(options);
     this.prefix = options.prefix;
     this.token = options.token;
+    this.owners = options.owners;
   }
 
   private async loadCommands() {
@@ -27,7 +29,7 @@ class DuckClient extends Client {
 
   public commands = new Collection();
 
-  private DuckVer = require(process.cwd() + "/package.json").version;
+  public DuckVer = require(process.cwd() + "/package.json").version;
 
   public async start() {
     this.dokdo = new Dokdo(this, {

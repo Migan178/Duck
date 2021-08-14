@@ -1,7 +1,7 @@
 module.exports = {
   name: "밴",
-  run: async (client: any, msg: any, args: any) => {
-    if (!msg.member.hasPermission("BAN_MEMBERS"))
+  execute: async (client: any, msg: any, args: any) => {
+    if (!msg.member.permissions.has("BAN_MEMBERS"))
       return msg.channel.send("당신은 이 명령어를 사용할 권한이 없습니다.");
     const mentionMember = msg.mentions.members.first();
     let reason = args.slice(1).join(" ");

@@ -1,11 +1,12 @@
 {
   "name": "duck",
-  "version": "0.1-dev",
+  "version": "0.1-dev.1",
   "scripts": {
-    "start": "nodemon --watch '.' --ext 'ts,json' --exec ts-node src"
+    "test": "nodemon --watch '.' --ext 'ts,json' --exec ts-node src",
+    "start": "nodemon dist"
   },
   "dependencies": {
-    "discord.js": "^13.0.1",
+    "discord.js": "13.1.0",
     "dokdo": "mome0320/dokdo#support-djs-v13",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.12",
@@ -17,5 +18,6 @@
   "devDependencies": {
     "@types/node": "^16.3.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "dist/index.js"
 }

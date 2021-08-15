@@ -1,6 +1,6 @@
 {
   "name": "duck",
-  "version": "0.1-dev.1",
+  "version": "0.1.1",
   "scripts": {
     "start": "tsc-watch --onSuccess \"node dist/index.js\""
   },

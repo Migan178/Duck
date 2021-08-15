@@ -41,6 +41,9 @@ class DuckClient extends Client {
     this.loadCommands();
     this.login();
     this.on("ready", () => {
+      console.log(
+        this.commands.map((c: any) => c.name).join(", ") + " Load Success"
+      );
       console.log(`Login ${this.user!.username}`);
       console.log(`Version ${this.DuckVer}`);
       console.log("====================");

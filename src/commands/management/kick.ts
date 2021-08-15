@@ -1,4 +1,4 @@
-module.exports = {
+export = {
   name: "킥",
   execute: async (client: any, msg: any, args: any) => {
     if (!msg.member.permissions.has("KICK_MEMBERS"))

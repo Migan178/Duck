@@ -1,9 +1,8 @@
 import { MessageEmbed } from "discord.js";
 
-const DuckVer = require("../../../package.json").version;
-
-module.exports = {
+export = {
   name: "도움말",
+  aliases: ["help"],
   execute: async (client: any, msg: any, args: any) => {
     const owner = client.users.cache.get(client.owners);
     const Embed = new MessageEmbed()
@@ -11,7 +10,7 @@ module.exports = {
       .setTitle(`${client.user!.username}의 도움말`)
       .setThumbnail(client.user.displayAvatarURL())
       .setDescription(
-        `접두사: \`\`${client.prefix}\`\`\n버젼: \`\`${DuckVer}\`\``
+        `접두사: \`\`${client.prefix}\`\`\n버젼: \`\`${client.DuckVer}\`\``
       )
       .addFields(
         {
@@ -23,13 +22,14 @@ module.exports = {
           value: `\`\`\`
 핑
 업타임
-도움말\`\`\``,
+도움말 [help]\`\`\``,
         },
         {
           name: "관리",
           value: `\`\`\`
 킥
-밴\`\`\``,
+밴
+청소\`\`\``,
         }
       )
       .setTimestamp(Date.now())

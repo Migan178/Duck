@@ -1,6 +1,6 @@
 import { MessageEmbed } from "discord.js";
 
-module.exports = {
+export = {
   name: "핑",
   execute: async (client: any, msg: any) => {
     const Embed = new MessageEmbed()

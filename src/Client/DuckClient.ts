@@ -29,7 +29,7 @@ class DuckClient extends Client {
 
   public commands = new Collection();
 
-  public DuckVer = require(process.cwd() + "/package.json").version;
+  public version = require(process.cwd() + "/package.json").version;
 
   public async start() {
     this.dokdo = new Dokdo(this, {
@@ -45,9 +45,9 @@ class DuckClient extends Client {
         this.commands.map((c: any) => c.name).join(", ") + " Load Success"
       );
       console.log(`Login ${this.user!.username}`);
-      console.log(`Version ${this.DuckVer}`);
+      console.log(`Version ${this.version}`);
       console.log("====================");
-      const Status = [`${this.prefix}도움말`, `version: ${this.DuckVer}`];
+      const Status = [`${this.prefix}도움말`, `version: ${this.version}`];
       let index = 0;
       setInterval(() => {
         if (index === Status.length) index = 0;

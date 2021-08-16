@@ -10,7 +10,7 @@ export = {
       .setTitle(`${client.user!.username}의 도움말`)
       .setThumbnail(client.user.displayAvatarURL())
       .setDescription(
-        `접두사: \`\`${client.prefix}\`\`\n버젼: \`\`${client.DuckVer}\`\``
+        `접두사: \`\`${client.prefix}\`\`\n버젼: \`\`${client.version}\`\``
       )
       .addFields(
         {

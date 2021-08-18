@@ -36,7 +36,7 @@ class DuckClient extends Client {
       prefix: this.prefix,
       noPerm: (msg) =>
         msg.reply("당신은 개발자가 아니라서 해당 명령어를 수행할수 없습니다."),
-      aliases: ["dokdo", "dok"],
+      aliases: ["dokdo", "dok", "eval"],
     });
     this.loadCommands();
     this.login();

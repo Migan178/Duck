@@ -31,13 +31,16 @@ class DuckClient extends Client {
 
   public version = require(process.cwd() + "/package.json").version;
 
-  public async start() {
+  public async setup() {
     this.dokdo = new Dokdo(this, {
       prefix: this.prefix,
       noPerm: (msg) =>
         msg.reply("당신은 개발자가 아니라서 해당 명령어를 수행할수 없습니다."),
       aliases: ["dokdo", "dok", "eval"],
     });
+  };
+
+  public async start() {
     this.loadCommands();
     this.login();
     this.on("ready", () => {

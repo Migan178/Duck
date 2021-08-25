@@ -8,36 +8,37 @@ const client = new DuckClient({
   owners: config.owners,
 });
 
-client.on("messageCreate", (msg) => {
-  if (
-    !msg.content.startsWith(client.prefix) ||
-    msg.author.bot ||
-    msg.channel.type === "DM"
-  )
-    return;
-  client.dokdo.run(msg);
+client
+  .on("messageCreate", (msg) => {
+    if (
+      !msg.content.startsWith(client.prefix) ||
+      msg.author.bot ||
+      msg.channel.type === "DM"
+    )
+      return;
+    client.dokdo.run(msg);
 
-  const args: string[] = msg.content
-    .slice(client.prefix.length)
-    .trim()
-    .split(/ +/);
-  const shift: any = args.shift();
-  const commandName = shift.toLowerCase();
+    const args: string[] = msg.content
+      .slice(client.prefix.length)
+      .trim()
+      .split(/ +/);
+    const shift: any = args.shift();
+    const commandName = shift.toLowerCase();
 
-  const command: any =
-    client.commands.get(commandName) ||
-    client.commands.find(
-      (cmd: any) => cmd.aliases && cmd.aliases.includes(commandName)
-    );
+    const command: any =
+      client.commands.get(commandName) ||
+      client.commands.find(
+        (cmd: any) => cmd.aliases && cmd.aliases.includes(commandName)
+      );
 
-  if (!command) return;
+    if (!command) return;
 
-  try {
-    command.execute(client, msg, args);
-  } catch (error) {
-    console.error(error);
-  }
-  if (!client.commands.has(commandName)) return;
-});
-
-client.start();
+    try {
+      command.execute(client, msg, args);
+    } catch (error) {
+      console.error(error);
+    }
+    if (!client.commands.has(commandName)) return;
+  })
+  .setup()
+  .then(() => client.start());

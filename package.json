@@ -13,7 +13,7 @@
     "pretty-ms": "^7.0.1",
     "ts-node": "^10.2.1",
     "tsc": "^2.0.3",
-    "tsc-watch": "^4.4.0",
+    "tsc-watch": "^4.5.0",
     "typescript": "^4.3.5"
   },
   "devDependencies": {

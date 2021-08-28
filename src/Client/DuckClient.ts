@@ -1,33 +1,16 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { Client, Collection } from "discord.js";
-import { readdirSync } from "fs";
+import { commandHandlerClient } from "@migan/discord.js-commandhandler";
 import Dokdo from "dokdo";
 
-class DuckClient extends Client {
+class DuckClient extends commandHandlerClient {
   dokdo: any;
-  prefix: string;
   owners: any;
   constructor(options: any) {
     super(options);
-    this.prefix = options.prefix;
     this.token = options.token;
     this.owners = options.owners;
   }
-
-  private async loadCommands() {
-    const commandFolders = readdirSync(__dirname + "/../commands");
-
-    for (const folder of commandFolders) {
-      const commandFiles = readdirSync(__dirname + `/../commands/${folder}`);
-      for (const file of commandFiles) {
-        const command = require(__dirname + `/../commands/${folder}/${file}`);
-        this.commands.set(command.name, command);
-      }
-    }
-  }
-
-  public commands = new Collection();
 
   public version = require(process.cwd() + "/package.json").version;
 
@@ -38,10 +21,9 @@ class DuckClient extends Client {
         msg.reply("당신은 개발자가 아니라서 해당 명령어를 수행할수 없습니다."),
       aliases: ["dokdo", "dok", "eval"],
     });
-  };
+  }
 
   public async start() {
-    this.loadCommands();
     this.login();
     this.on("ready", () => {
       console.log(

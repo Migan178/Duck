@@ -39,6 +39,11 @@
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+"@migan/discord.js-commandhandler@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@migan/discord.js-commandhandler/-/discord.js-commandhandler-0.1.1.tgz#50f1c37c9383fe9c88d388c71e29eb7d4e65b4f4"
+  integrity sha512-THjbQEL5M0UCCDjP+Do8imWxEOpQm29M9Ifva0p58nQgQJUU3Z/Yf+42ZxbFD5dQKjmZ1qP30aHE5Vn66PbLQg==
+
 "@sapphire/async-queue@^1.1.4":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@sapphire/async-queue/-/async-queue-1.1.4.tgz#ae431310917a8880961cebe8e59df6ffa40f2957"
@@ -358,7 +363,7 @@ discord-api-types@^0.22.0:
   resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.22.0.tgz#34dc57fe8e016e5eaac5e393646cd42a7e1ccc2a"
   integrity sha512-l8yD/2zRbZItUQpy7ZxBJwaLX/Bs2TGaCthRppk8Sw24LOIWg12t9JEreezPoYD0SQcC2htNNo27kYEpYW/Srg==
 
-discord.js@13.1.0:
+discord.js@^13.1.0:
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.1.0.tgz#99f6a2a8be88d31906ff0148e9b1cb603ebb2e2e"
   integrity sha512-gxO4CXKdHpqA+WKG+f5RNnd3srTDj5uFJHgOathksDE90YNq/Qijkd2WlMgTTMS6AJoEnHxI7G9eDQHCuZ+xDA==
@@ -372,9 +377,10 @@ discord.js@13.1.0:
     node-fetch "^2.6.1"
     ws "^7.5.1"
 
-dokdo@mome0320/dokdo#support-djs-v13:
-  version "0.4.1"
-  resolved "https://codeload.github.com/mome0320/dokdo/tar.gz/9b8840350dafff6d650fe256ec71ba5b511323b9"
+dokdo@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/dokdo/-/dokdo-0.5.0.tgz#a614cd9c80f8730660f0a1659b9b8abd28c3de6d"
+  integrity sha512-MG5QXy95ORQ+2fU5NbQ5HOELQHiwZfulj2fpwZI8mfEm9VIG2pWTiexXhIFjS5YPoQnWUm2q65cenOl0kaH5rQ==
   dependencies:
     node-fetch "^2.6.1"
 

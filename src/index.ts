@@ -8,6 +8,7 @@ const client = new DuckClient({
   owners: config.owners,
 });
 
+client.loadCommandOnFolder(__dirname + "/commands", "js");
 client
   .on("messageCreate", (msg) => {
     if (

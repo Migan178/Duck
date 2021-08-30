@@ -39,10 +39,10 @@
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-"@migan/discord.js-commandhandler@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@migan/discord.js-commandhandler/-/discord.js-commandhandler-0.1.2.tgz#c4acd14055eedee9d9c1b31598be54f6776731cf"
-  integrity sha512-jTaPgScUzGVGb04PK7OH/pugW3U+7euJOcF+kQK4It5css+x57n9c+ScPTNDap9QzGOKZFD6YQ+OvPYtOV/Wbw==
+"@migan/discord.js-commandhandler@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@migan/discord.js-commandhandler/-/discord.js-commandhandler-0.3.1.tgz#a065cf0625e585aaab171baa3701dfc37cde6c85"
+  integrity sha512-568EMTfsAqh5Igls/SSLK6vgPkPl1yBLAoU3v3SamxDgUZ1CxziUKd5svKJjkgslPOfuYdjV1kRDHw4bXmwK1A==
 
 "@sapphire/async-queue@^1.1.4":
   version "1.1.4"

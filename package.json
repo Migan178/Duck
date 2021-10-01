@@ -7,7 +7,7 @@
   "dependencies": {
     "@migan/discord.js-commandhandler": "^0.1.2",
     "discord.js": "^13.1.0",
-    "dokdo": "^0.5.0",
+    "dokdo": "^0.5.1",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.12",
     "pretty-ms": "^7.0.1",
